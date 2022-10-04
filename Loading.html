@@ -1,0 +1,45 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .loader{
+        font-size: 5rem;
+        color:red;
+        position: relative;
+    }
+    .loader span {
+        mix-blend-mode: difference;
+    }
+    .loader::after {
+        content: '';
+        position: absolute;
+        height: calc(100%-40px);
+        left:0;
+        top: 20px;
+        width: 30%;
+        background-color: white;
+        z-index: -1;
+        color:black;
+        overflow: hidden;
+        animation: animate 4s infinite linear;
+    }
+    @keyframes animate{
+        0%,
+        100%{
+            transform: translateX(0px);
+        }
+        50%{
+            transform: translateX();
+        }
+    }
+</style>
+<body>
+    <div class="loader">
+        <span>LOADING</span>
+    </div>
+</body>
+</html>
